@@ -1,44 +1,44 @@
 # 🌿 Bot Marley
 
-Un chatbot inspirado en el espíritu, los valores y la filosofía de vida de Bob Marley y el movimiento Rastafari — construido como proyecto de aprendizaje, 100% en el navegador (HTML + JS + Claude API), sin backend.
+A chatbot inspired by the spirit, values, and life philosophy of Bob Marley and the Rastafari movement — built as a learning project, 100% in the browser (HTML + JS + Claude API), no backend required.
 
-## ¿Cómo funciona?
+## How it works
 
-- Es una sola página (`index.html`) que corre completamente en tu navegador.
-- Usa la [API de Claude](https://docs.claude.com) de Anthropic para generar las respuestas en tiempo real.
-- Un *system prompt* le da a Claude la "personalidad Marley": temas de unidad, esperanza, resiliencia, naturaleza, justicia y alegría — comunicados con calidez y en sus propias palabras.
-- Tu API key se guarda únicamente en el `localStorage` de tu navegador. Nunca se envía a ningún servidor nuestro (no existe un backend) — solo viaja directamente de tu navegador a la API de Anthropic.
+- It's a single page (`index.html`) that runs entirely in your browser.
+- It uses Anthropic's [Claude API](https://docs.claude.com) to generate responses in real time.
+- A *system prompt* gives Claude the "Marley personality": warmth, unity, hope, resilience, nature, justice, and joy — expressed in its own words, plus a song recommendation at the end of every reply.
+- Your API key is stored only in your browser's `localStorage`. It's never sent to any server of ours (there is no backend) — it travels directly from your browser to Anthropic's API.
 
-## Cómo usarlo
+## How to use it
 
-1. Consigue una API key en [console.anthropic.com](https://console.anthropic.com/) (Settings → API Keys).
-2. Abre `index.html` en tu navegador (doble clic, o publícalo en GitHub Pages — ver abajo).
-3. Pega tu API key en el campo de arriba y presiona **Guardar**.
-4. ¡Empieza a conversar!
+1. Get an API key at [console.anthropic.com](https://console.anthropic.com/) (Settings → API Keys).
+2. Open `index.html` in your browser (double-click it, or publish it on GitHub Pages — see below).
+3. Paste your API key into the field at the top and press **Save**.
+4. Start chatting!
 
-## Publicarlo en GitHub Pages
+## Publishing it on GitHub Pages
 
-1. Crea un repositorio nuevo en GitHub y sube `index.html` (y este `README.md`).
-2. Ve a **Settings → Pages**, selecciona la rama `main` y la carpeta raíz (`/`).
-3. GitHub te dará una URL pública (algo como `https://tu-usuario.github.io/bot-marley/`).
-4. Comparte el link — cada persona que lo visite usará **su propia** API key, guardada solo en su navegador.
+1. Create a new repository on GitHub and upload `index.html` (and this `README.md`).
+2. Go to **Settings → Pages**, select the `main` branch and the root folder (`/`).
+3. GitHub will give you a public URL (something like `https://your-username.github.io/bot-marley/`).
+4. Share the link — everyone who visits uses **their own** API key, stored only in their own browser.
 
-## Sobre las letras y los derechos de autor
+## About the lyrics and copyright
 
-Este proyecto **no contiene ni reproduce letras de canciones de Bob Marley**. El *system prompt* instruye explícitamente al modelo para que:
+This project **does not contain or reproduce Bob Marley song lyrics**. The *system prompt* explicitly instructs the model to:
 
-- hable en su propio lenguaje, inspirándose en los temas y el espíritu asociados a Bob Marley (unidad, esperanza, naturaleza, resistencia pacífica, alegría),
-- pueda mencionar **títulos** de canciones cuando sea relevante,
-- pero **nunca** reproduzca versos, estrofas o fragmentos extensos de letras —ni siquiera parafraseados de cerca—, limitándose como máximo a frases muy cortas y ampliamente conocidas, integradas con naturalidad.
+- speak in its own voice, drawing on the themes and spirit associated with Bob Marley (unity, hope, nature, peaceful resistance, joy),
+- mention song **titles** when relevant,
+- but **never** reproduce verses, stanzas, or extended lyric fragments — not even close paraphrases — limiting itself to, at most, very short and widely known phrases woven naturally into its own sentences.
 
-Este es un proyecto educativo y no oficial, sin afiliación con la familia Marley, sus discográficas o sus derechohabientes. Las marcas y nombres mencionados pertenecen a sus respectivos dueños.
+This is an unofficial, educational project with no affiliation to the Marley family, their record labels, or rights holders. All trademarks and names mentioned belong to their respective owners.
 
-## Notas técnicas / de costos
+## Technical / cost notes
 
-- Modelo usado: `claude-haiku-4-5` (rápido y económico).
-- `max_tokens` está limitado a 400 por respuesta y el historial de conversación se trunca a los últimos 12 mensajes, para mantener el costo de la API bajo control.
-- La llamada incluye el header `anthropic-dangerous-direct-browser-access: true`, necesario para invocar la API de Anthropic directamente desde el navegador (en vez de desde un servidor). Ten presente que esto expone tu API key en el cliente — por eso cada persona usa la suya propia, y nunca debes compartir la tuya.
+- Model used: `claude-haiku-4-5` (fast and cost-effective).
+- `max_tokens` is capped at 450 per response, and the conversation history is trimmed to the last 12 messages, to keep API costs predictable.
+- The request includes the `anthropic-dangerous-direct-browser-access: true` header, required to call the Anthropic API directly from the browser (instead of from a server). Keep in mind this exposes your API key client-side — that's why each person uses their own, and you should never share yours.
 
-## Licencia
+## License
 
-Código abierto para fines educativos. Úsalo, modifícalo y compártelo libremente — solo recuerda no incluir contenido con derechos de autor (como letras completas) en tus propias versiones.
+Open source for educational purposes. Use it, modify it, and share it freely — just remember not to include copyrighted material (like full song lyrics) in your own versions.
